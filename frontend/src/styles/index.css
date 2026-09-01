@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0a0f;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar       { width: 6px; }
+  ::-webkit-scrollbar-track { background: #111118; }
+  ::-webkit-scrollbar-thumb { background: #2a2a38; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-prism-surface/80 backdrop-blur-sm border border-prism-border rounded-xl shadow-lg;
+  }
+
+  .btn-primary {
+    @apply bg-prism-accent hover:bg-prism-accent-light text-white font-semibold
+           px-6 py-2.5 rounded-lg transition-all duration-200
+           hover:shadow-lg hover:shadow-prism-accent/25 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-prism-elevated text-prism-text-secondary
+           hover:text-prism-text-primary font-medium px-4 py-2 rounded-lg
+           transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-prism-elevated border border-prism-border rounded-lg
+           px-4 py-3 text-prism-text-primary placeholder-prism-text-muted
+           focus:outline-none focus:border-prism-accent focus:ring-1
+           focus:ring-prism-accent transition-colors duration-200;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-prism-text-primary tracking-tight;
+  }
+}
