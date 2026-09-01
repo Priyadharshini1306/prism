@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',   // Use Vite proxy — same origin, so cookies work correctly
+  baseURL: import.meta.env.VITE_API_URL,   // Use Vite proxy — same origin, so cookies work correctly
   withCredentials: true,
 });
 
